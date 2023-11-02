@@ -1,0 +1,206 @@
+*{
+    font-family: 'Roboto', sans-serif;
+    margin: 0;padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    text-transform: capitalize;
+    transform: transform .2s linear;
+
+
+}
+::selection{
+    background: red;
+    color: white;
+}
+html{
+    font-size:medium;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-padding-top: 6.5rem;
+    
+}
+body{
+    /* height: 200vh; */
+    /* border: 1px solid red; */
+    width: 100%;
+}
+.logo{
+    font-size: 35px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bolder;
+    text-align: center;
+    text-transform: uppercase; 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+a span{
+    color:red;
+    text-transform: uppercase; 
+    
+}
+.nav-full{
+    /* border: 1px solid black; */
+    padding: 10px;
+    display: flex;
+    width: 100%;
+    justify-content:space-around;
+    gap: 15px;
+}
+.nav-full li a{
+    font-size: 20px;
+    font-weight: bold;
+}
+.nav-full li a:hover{
+    color: red;
+    transform: scale(0.85);
+    font-weight:bolder;
+
+}
+.search-full{
+    /* border: 1px solid black; */
+    width: 80%;
+    padding: 15px;
+    margin-right: 75px;
+    display: flex;
+    /* gap: 45px; */
+    margin-left: 15px;
+}
+.login-page{
+   /* border: 1px solid black; */
+   width: 20%;
+}
+.service{
+    /* border: 1px solid yellow; */
+    height: 50vh;
+    display: flex;
+    align-items: center;
+}
+.title{
+    display: flex;
+    /* border: 1px solid black; */
+    justify-content: center;
+}
+.title h3{
+    font-size: 35px;
+    text-transform: uppercase;
+    font-weight: bolder;
+    transition: transform 1s ease;
+}
+.title h3:hover{
+    color: red;
+    transform: scale(0.75);
+}
+.box{
+    width: 30%;
+    height: 320px;
+    /* border: 1px solid black; */
+    margin: 130px;
+    text-align: center;
+    box-shadow: 0 0 5px black;
+    transition: transform 1s ease;
+}
+.box:hover{
+    transform: scale(0.75);
+}
+.box img{
+    padding: 10px;
+}
+.box h3{
+    text-align: center;
+    font-size: 20px;
+    margin-top: 15px;
+}
+.clients{
+    /* border: 1px solid black; */
+    height: auto;
+    width: 100%;
+    padding: 20px
+    
+}
+.heading{
+    text-align: center;
+}
+.heading h2{
+    font-size: 35px;
+    text-transform: uppercase;
+    font-weight: bolder;
+    transition: transform 1s ease;
+}
+.heading h2:hover{
+    color: red;
+    transform: scale(0.75);
+}
+.cli_card_full{
+    box-shadow: 0 0 5px black;
+   
+}  
+.card img{
+    padding: 10px;
+}
+.cli_text{
+    /* border: 1px solid yellow; */
+    background-color:#e5b7e8;
+    padding: 10px;
+}
+.card-body p{
+    padding: 5px;
+    font-size: 20px;
+}
+.button_cli{
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+    padding: 5px;
+}
+.follow{
+    margin-left: 45px;
+}
+@media (max-width: 768px) {
+    /* Adjust styles for small screens here */
+    .nav-full {
+        flex-direction: column; /* Stack nav items vertically on small screens */
+        text-align: center; /* Center-align nav items on small screens */
+    }
+
+    .nav-full li a {
+        font-size: 18px; /* Reduce font size for small screens */
+    }
+
+    .search-full {
+        width: 100%; /* Full-width search bar on small screens */
+        margin-right: 0;
+        margin-left: 0;
+    }
+
+    .login-page {
+        width: 100%; /* Full-width login dropdown on small screens */
+    }
+
+    .service {
+        flex-direction: column; /* Stack the boxes vertically on small screens */
+        align-items: center; /* Center-align the boxes on small screens */
+        height: auto; /* Remove fixed height on small screens */
+    }
+
+    .box {
+        width: 80%;
+        height:250px;
+         /* Adjust the box width for better fit on small screens */
+    }
+}
+
+/* Media query for screens between 769px and 1200px wide (medium-sized screens) */
+@media (min-width: 769px) and (max-width: 1200px) {
+    /* Adjust styles for medium-sized screens here */
+    .nav-full li a {
+        font-size: 20px; /* Restore font size for medium screens (if needed) */
+    }
+
+    /* Add specific styles for medium-sized screens here */
+}
+
+/* Media query for screens above 1200px wide (large screens) */
+@media (min-width: 1201px) {
+    /* Adjust styles for large screens here */
+    /* Add specific styles for large screens here */
+}
+    

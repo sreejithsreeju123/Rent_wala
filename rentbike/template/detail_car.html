@@ -1,0 +1,62 @@
+{% extends 'common.html' %}
+{% block content %}
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Two wheeler section</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/detailcar.css'%}">
+</head>
+<body>
+    <div class="main-container">
+        <div class="containe">
+            <div class="card mb-3 card-full ">
+                <div class="row g-0 ">
+                  <div class="col-md-4 a">
+                    <img src="{{object.image_url}}" class="img-fluid rounded-start" alt="no image found">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body body-design ">
+                      <h5 class="card-title model">{{object.vechile_name}}</h5>
+                      <h5 class="card-title maker"><span>MAKER:</span>{{object.maker}}</h5>
+                      <h5 class="card-title maker"><span>MF Year:</span>{{object.yearofproduction}}</h5>
+                      <h5 class="card-title maker"><span>CC:</span>{{object.cc}}</h5>
+                      <h5 class="card-title maker"><span>RATING:</span><i class="fa-solid fa-star" style="color: #c6df0c;">{{object.rating}}</i></h5>
+                      <h5 class="card-title maker"><span>AMOUNT:</span>{{object.rate_per_Hr}}RS</h5>
+                      <a href="{% url 'car_payment' object.id%}" class="btn btn-danger">Pay now</a>
+                      <a href="#" class="btn btn-primary">Add to Cart</a>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </div>
+        <div class="sub_container">
+          <h3>You may also like</h3>
+        <div class="row row-cols-1 row-cols-md-5 g-4">
+          {% for vehicle in random_vehicles %}
+          <div class="col full-card">
+            <div class="card card-design">
+                <img src="{{ vehicle.image_url }}" class="card-img-top" alt="no image found">
+                <div class="card-body">
+                    <h5 class="card-title">Model: {{ vehicle.vechile_name }}</h5>
+                    <h5 class="card-title">Rating:<i class="fa-solid fa-star" style="color: #c6df0c;">{{ vehicle.rating }}</i></h5>
+                    {% if vehicle.available %}
+                        <p>Available</p>
+                        <a href="{% url 'detailcar' vehicle.id %}" class="btn btn-primary design-book">Book now</a>
+                    {% else %}
+                        <a href="{% url 'notavailable'%}" class="btn btn-danger design-out">Currently not available</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+  </div>
+</body>
+</html>
+{% endblock content %}

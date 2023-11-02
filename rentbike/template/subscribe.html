@@ -1,0 +1,38 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subscribe Form</title>
+    <link rel="stylesheet" href="{% static 'css/subscribestyle.css'%}">
+</head>
+<body>
+    <div class="contact">
+        <form method="post">
+            {% csrf_token %}
+            <h2>Contact Form</h2>
+            <p>
+                <input type="text" name="name" id="name" placeholder="First Name" autocomplete="off" required name="user_name" required >
+                <span id="nameerror"></span>
+                
+            </p>
+            <p>
+                <input type="text" placeholder="Last Name" name="lastname" id="last_name" last_name="last_name" autocomplete="off" required name="user_lastname" required >
+                <span id="last_nameerror"></span>
+            </p>
+        
+            
+
+            <input type="email" name="email" placeholder="enter your Email Id" autocomplete="off" required name=" user_mail" required>
+            
+            <textarea rows="5" cols="60" name="subject" placeholder="Enter Msg" autocomplete="off" required name="user_msg" required></textarea>
+            
+            <button type="submit" name="send_button" id="submitbtn">Send Msg</button>
+
+        </form>
+    </div>
+    
+    
+</body>
+</html>

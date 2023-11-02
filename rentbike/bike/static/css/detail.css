@@ -1,0 +1,166 @@
+.main-container{
+    width: 100%;
+    height:auto;
+    /* border: 1px solid black; */
+}
+.containe{
+    width: 100%;
+    height:60vh;
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+}
+.sub_container{
+    width: 100%;
+    height: 70vh;
+    /* border: 1px solid black; */
+}
+.a{
+    /* border: 1px solid black; */
+    height: 47vh;
+    width: 30%;
+}
+.a img{
+    height: 55vh;
+    width: 100%;
+}
+.card-full {
+    /* border: 3px solid black; */
+    border-radius: 10px;
+    width: 50%;
+    box-shadow: 0 0 5px black;
+}
+.body-design{
+    width: 80%;
+    margin-left: 25px;
+    height: 47vh;
+    /* border: 1px solid red; */
+}
+.model{
+    font-size: 25px;
+    font-weight: bolder;
+    text-align: center;
+    text-decoration: underline;
+}
+.model:hover{
+    color:red;
+}
+.maker{
+    font-size:25px;
+}
+.maker span{
+    font-size: 20px;
+    font-weight: bold;
+    font-family:Arial, Helvetica, sans-serif;
+    font-stretch: normal;
+}
+.pay{
+    padding: 10px;
+    margin-left: 15px;
+    margin-top: 25px;
+    width: 35%;
+}
+.add{
+    padding: 10px;
+    margin-left: 35px;
+    margin-top: 25px;
+}
+.card-design{
+    /* border: 2px solid black; */
+    width: 100%;
+    height:55vh;
+    box-shadow: 0 0 5px black;
+}
+.card-design img{
+    height: 30vh;
+    width: 100%;
+}
+.design-out{
+    margin-top: 40px;
+    width: 100%;
+}
+.design-book{
+    width: 100%;
+}
+
+
+
+
+
+/* Small screens (phones) */
+@media only screen and (max-width: 767px) {
+    .containe {
+      flex-direction: column;
+      align-items: center; 
+      height:100vh; 
+    }
+    .card-full {
+        width: 100%;
+    }
+    
+    .a {
+      width: 100%; 
+    }
+    
+    .body-design {
+      width: 100%; 
+      margin-left: 0; 
+    }
+    
+    .pay,
+    .add {
+      width: 40%;
+      margin-left:10px;
+      margin-top:-2px ; 
+    }
+    .footer{
+        margin-top:2005px;
+    }
+  }
+  
+  /* Medium screens (tablets) */
+  @media only screen and (min-width: 768px) and (max-width: 1023px) {
+    .containe {
+        flex-direction: column; 
+        align-items: center; 
+        height:auto; 
+      }
+      .card-full {
+        width: 100%;
+      }
+      .a {
+        width: 100%; 
+      }
+      .body-design{
+        width: 100%;
+        /* border: 1px solid red; */
+        /* margin-left: 155px; */
+        height: auto;
+      }
+      .maker span{
+        font-size: 25px;
+      }
+      .maker h5{
+        font-size: 25px;
+      }
+      .pay,
+      .add {
+        padding: 10px;
+        margin-left: 0;
+      }
+      .model{
+        margin-right: 95px;
+      }
+      .card-design{
+        height: 46vh;
+        
+      }
+      .full-card{
+        width: 100%;
+      }
+      .footer{
+        margin-top: 2405px;
+      }
+      
+    }

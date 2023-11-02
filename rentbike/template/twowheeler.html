@@ -1,0 +1,101 @@
+{% extends 'common.html' %}
+{% block content %}
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Two wheeler section</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/twowheeler.css'%}">
+</head>
+<body>
+    <div class="choice">
+        <h3>Brands</h3>
+        <div class="brands">
+            <div class="row row-cols-1 row-cols-md-6 g-4">
+                <div class="col">
+                  <div class="card card-design h-100">
+                    <a href="{% url 'honda' %}"><img src="{%static 'images/honda.jpg'%}" class="card-img-top" alt="no image found"></a>
+                    <div class="card-body">
+                      <h5 class="card-title title-allign">Honda</h5>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card card-design h-100">
+                    <a href="{% url 'tvs' %}"><img src="{%static 'images/tvs.jpg'%}" class="card-img-top" alt="no image found"></a>
+                    <div class="card-body">
+                      <h5 class="card-title title-allign">Tvs</h5>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card card-design h-100">
+                    <a href="{% url 'yamaha'%}"><img src="{%static 'images/yahama.jpg'%}" class="card-img-top" alt="no image found"></a>
+                    <div class="card-body">
+                      <h5 class="card-title title-allign">Yamaha</h5>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card card-design h-100">
+                    <a href="{% url 'hero'%}"><img src="{%static 'images/hero.jpg'%}" class="card-img-top" alt="no image found"></a>
+                    <div class="card-body">
+                      <h5 class="card-title title-allign">hero</h5>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                    <div class="card card-design h-100">
+                      <a href="{% url 'enfield'%}"><img src="{%static 'images/royal.jpg'%}" class="card-img-top" alt="no image found"></a>
+                      <div class="card-body">
+                        <h5 class="card-title title-allign ">Royal Enfield</h5>
+                      </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card card-design h-title-allign100">
+                      <a href="{% url 'suzuki'%}"><img src="{%static 'images/suzuki.jpg'%}" class="card-img-top" alt="no image found"></a>
+                      <div class="card-body">
+                        <h5 class="card-title title-allign">suzuki</h5>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </div>
+    <div class="row ">
+        <div class="row row-cols-1 row-cols-md-5 g-2">
+            {% for i in object %}
+            <div class="col">
+                <div class="card card-transform h-100 " style="border-radius: 15px; margin-left:15px;">
+                <img src="{{i.image_url}}" class="card-img-top " style="width:100%; height:200px; padding:10px;" alt="no image found ">
+            <div class="card-body card-width  ">
+                <h3 class="card-title model">Model:{{i.vechile_name}}</h3>
+                <h5 class="card-title maker"> maker:{{i.maker}}</h5>
+                <h5 class="card-title maker">Cc:{{i.cc}}</h5>
+                <h5 class="card-title maker">Production_year:{{i.yearofproduction}}</h5>
+                <h5 class="card-title maker">Rating:<i class="fa-solid fa-star" style="color: #c6df0c;">{{i.rating}}</i></h5>
+                <h5 class="card-title maker">Rate/per/hr:{{i.rate_per_Hr}}</h5>
+                {% if i.available is True%}
+                <p>Available</p>
+                <a href="{% url 'detailpage' i.id%}" class="btn btn-primary design">Book now </a>
+                {% else%}
+                <a href="{% url 'notavailable'%}" class="btn btn-danger design-out">currently not available</a>
+                {%endif%}
+                
+    
+    
+            </div>
+    
+            </div>
+        </div>
+            {%endfor%}
+        </div>
+    </div>
+</body>
+</html>
+{% endblock content%}
